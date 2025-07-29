@@ -352,8 +352,8 @@ jobs:
           done
           endgroup
           #
-          group "make -j1 V=s package/index"
-          make -j1 V=s package/index
+          group "make package/index"
+          make package/index
           endgroup
           # Build done
           popd
@@ -387,7 +387,7 @@ jobs:
           PACKAGES: ${{ env.PACKAGES }}
           INDEX: 1
           KEY_BUILD: ${{ env.USIGN_KEY }}
-          #V: s
+          V: s
 
       - name: Upload error logs
         if: ${{ failure() && steps.build_packags.conclusion == 'failure' }}
