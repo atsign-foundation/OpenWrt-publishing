@@ -247,7 +247,6 @@ jobs:
         run: |
           sudo apt update
           sudo apt -y install axel
-          echo "Got this far"
           echo "Axel will download from: https://codeload.github.com/$GITHUB_REPOSITORY_OWNER/fp-releases/tar.gz/refs/heads/$Branch"
           axel -q -n8 -o releases.tgz "https://codeload.github.com/$GITHUB_REPOSITORY_OWNER/fp-releases/tar.gz/refs/heads/$Branch"
           tar -xzf releases.tgz releases-$Branch/$BRANCH/packages/${{ inputs.ARCH }}/ && mv releases-$Branch ${{ inputs.GHPAGES_PATH }} || echo
@@ -354,7 +353,7 @@ jobs:
           endgroup
           #
           group "make package/index"
-          make package/index
+          make V=s package/index
           endgroup
           # Build done
           popd
