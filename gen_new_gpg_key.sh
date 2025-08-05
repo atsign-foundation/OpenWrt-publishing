@@ -4,7 +4,7 @@ PW=$(echo $(cat /dev/urandom 2>/dev/null | head -n 8 | md5sum | cut -c 1-${PWSIZ
 FINGERPRINT=
 KEYSIZE=4096
 EXPIRE=0
-NAME="cpswan packages"
+NAME="Atsign packages"
 MAIL="478926+cpswan@users.noreply.github.com"
 #
 out=$(gpg --full-gen-key --batch <(echo "Key-Type: 1"; \
