@@ -67,7 +67,7 @@ jobs:
 
     steps:
       - name: Get system info
-        uses: kenchan0130/actions-system-info@f052b582679c1c21444b04822a375533585dac32 # master
+        uses: kenchan0130/actions-system-info@1a2bcdb85b97d0a7e56c4a0c522ca3869ddc52d8 # master
         id: system-info
       - name: Print system info
         shell: bash
