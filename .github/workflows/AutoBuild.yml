@@ -149,7 +149,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete old Workflow Runs
-        uses: Mattraks/delete-workflow-runs@39f0bbed25d76b34de5594dceab824811479e5de # v2.0.6
+        uses: Mattraks/delete-workflow-runs@a848750987669744ecffad5e2d22a36ff4fe8197 # v2.1
         if: env.DELETE_OLD_WORKFLOW == 'true' && !cancelled()
         with:
           retain_days: ${{ env.WORKFLOW_RETAIN_DAYS }}
