@@ -30,6 +30,9 @@ concurrency:
   group: "${{ github.workflow }}-${{ github.ref }}"
   cancel-in-progress: false
 
+permissions:
+  contents: read
+
 jobs:
   compile:
     permissions:
@@ -92,13 +95,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           token: ${{ secrets.RELEASES_PUSH }}
           repository: ${{ github.repository_owner }}/OpenWrt-releases
           ref: 'gh-pages'
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
         with:
           pattern: OpenWRT-Build-*
           path: packages-artifact
@@ -146,7 +149,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete old Workflow Runs
-        uses: Mattraks/delete-workflow-runs@v2.0.6
+        uses: Mattraks/delete-workflow-runs@a848750987669744ecffad5e2d22a36ff4fe8197 # v2.1
         if: env.DELETE_OLD_WORKFLOW == 'true' && !cancelled()
         with:
           retain_days: ${{ env.WORKFLOW_RETAIN_DAYS }}
