@@ -376,7 +376,7 @@ jobs:
 
       - name: Build Packages
         id: build_packags
-        uses: fantastic-packages/gh-action-sdk@b5174879f783016c7f5006190d2f5d082ed0c081 # 24.10
+        uses: fantastic-packages/gh-action-sdk@da8f7293babeb9dd71bbb37c3b173e669b12c508 # 24.10
         env:
           #ARCH: ${{ inputs.ARCH }}-${{ env.OP_VERSION }}
           ARCH: ${{ inputs.ARCH }}-${{ env.SNAPSHOTS != 'y' && format('{0}-', env.BRANCH) || '' }}SNAPSHOT
