@@ -369,7 +369,7 @@ jobs:
 
       - name: Upload Specials Logs
         if: ${{ failure() && steps.build_specials.conclusion == 'failure' }}
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: Specials-logs-${{ env.OP_VERSION }}-${{ inputs.ARCH }}-${{ inputs.BOARD }}-${{ inputs.SUBTARGET }}-${{ inputs.MODEL }}-${{ hashFiles('**/Makefile') }}
           path: ${{ github.workspace }}/SPECIAL_WORKDIR/SDK/logs
@@ -394,7 +394,7 @@ jobs:
 
       - name: Upload error logs
         if: ${{ failure() && steps.build_packags.conclusion == 'failure' }}
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: error-logs-${{ env.OP_VERSION }}-${{ inputs.ARCH }}-${{ inputs.BOARD }}-${{ inputs.SUBTARGET }}-${{ inputs.MODEL }}-${{ hashFiles('**/Makefile') }}
           path: /workdir/logs
@@ -526,7 +526,7 @@ jobs:
         working-directory: ${{ inputs.GHPAGES_PATH }}/
 
       - name: Upload artifact
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: ${{ env.artifact }}
           path: |
