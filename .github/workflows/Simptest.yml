@@ -43,7 +43,7 @@ jobs:
           clang llvm libbpf-dev pkg-config libdw-dev libelf-dev zlib1g-dev
 
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           ref: ${{ github.ref_name }}
           lfs: true
@@ -63,7 +63,7 @@ jobs:
 
       - name: Setup tmate session
         if: ${{ failure() && steps.do_something.conclusion == 'failure' }}
-        uses: mxschmitt/action-tmate@c0afd6f790e3a5564914980036ebf83216678101 # v3.23
+        uses: mxschmitt/action-tmate@35b54afac29c97fb54faba5b513f8fbd1882f113 # v3.24
 
       - name: Upload WORKDIR
         if: ${{ failure() && steps.do_something.conclusion == 'failure' }}
